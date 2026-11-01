@@ -1,0 +1,447 @@
+/*
+============================================================
+ BIData CARD DESIGN SYSTEM
+ File: bidata-cards.css
+============================================================
+
+ Purpose:
+ - 30-day deal card design
+ - Active lot card design
+ - Independent field widths
+ - Fonts
+ - Colors
+ - Padding / height / borders
+ - Platform-specific card settings
+
+ IMPORTANT:
+ Existing appearance is NOT changed yet.
+============================================================
+*/
+
+
+/* =========================================================
+   01. AUCTION ? 30 DAYS
+   ========================================================= */
+
+/* Will be configured step-by-step */
+
+
+/* =========================================================
+   02. AUCTION ? ACTIVE LOTS
+   ========================================================= */
+
+/* Will be configured step-by-step */
+
+
+/* =========================================================
+   03. SHOP ? 30 DAYS
+   ========================================================= */
+
+/* Will be configured step-by-step */
+
+
+/* =========================================================
+   04. SHOP ? ACTIVE LOTS
+   ========================================================= */
+
+/* Will be configured step-by-step */
+
+
+/* =========================================================
+   05. NATIONAL ? 30 DAYS
+   ========================================================= */
+
+/* Will be configured step-by-step */
+
+
+/* =========================================================
+   06. NATIONAL ? ACTIVE LOTS
+   ========================================================= */
+
+/* Will be configured step-by-step */
+
+
+/* =========================================================
+   07. XT AUCTION ? 30 DAYS
+   ========================================================= */
+
+/* Will be configured step-by-step */
+
+
+/* =========================================================
+   08. XT AUCTION ? ACTIVE LOTS
+   ========================================================= */
+
+/* Will be configured step-by-step */
+
+
+/* =========================================================
+   09. XT NATIONAL ? 30 DAYS
+   ========================================================= */
+
+/* Will be configured step-by-step */
+
+
+/* =========================================================
+   10. XT NATIONAL ? ACTIVE LOTS
+   ========================================================= */
+
+/* Will be configured step-by-step */
+
+
+
+/* =========================================================
+   AUCTION 30 DAYS ? FIELD 01 ? LOT NUMBER
+   ========================================================= */
+
+.auction-card-30d .xt-sale-summary > .xt-sale-cell:nth-child(1){
+    flex:1.10 1 0 !important;
+}
+
+
+
+
+
+/* AUCTION 30 DAYS ? FIELD 02 ? DATE */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell:nth-child(2){
+    flex:0.70 1 0 !important;
+}
+
+
+
+
+
+/* AUCTION 30 DAYS ? FIELD 04 ? QUANTITY */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell:nth-child(4){
+    flex:0.60 1 0 !important;
+}
+
+
+
+
+/* AUCTION 30 DAYS ? FIELD 05 ? UNIT LABEL WORD WRAP */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell:nth-child(5) small{
+    white-space:normal !important;
+    overflow-wrap:normal !important;
+    word-break:normal !important;
+    line-height:1.2 !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? FIELD 05 ? UNIT WIDTH */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell:nth-child(5){
+    flex:0.70 1 0 !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? FIELD 08 ? CATEGORY LABEL */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell:nth-child(8) small{
+    display:flex !important;
+    align-items:center !important;
+    gap:5px !important;
+    color:#6c7c93 !important;
+    font-size:12px !important;
+    font-weight:500 !important;
+    line-height:20px !important;
+    visibility:visible !important;
+    opacity:1 !important;
+}
+
+
+
+/* =========================================================
+   AUCTION 30 DAYS ? PARTY ROW 4 COLUMNS
+   buyer | region | supplier | status
+   ========================================================= */
+
+.auction-card-30d .xt-party-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+}
+
+.auction-card-30d .auction-status-party-card{
+    min-width:0 !important;
+}
+
+@media(max-width:900px){
+    .auction-card-30d .xt-party-grid{
+        grid-template-columns:1fr !important;
+    }
+}
+
+
+
+/* =========================================================
+   AUCTION 30 DAYS ? TOP 8 FIELDS TYPOGRAPHY STANDARD
+   Widths are NOT changed.
+   ========================================================= */
+
+/* Labels ? all 8 */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell small{
+    font-size:12px !important;
+    font-weight:500 !important;
+    line-height:20px !important;
+}
+
+/* Values ? all 8 */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell b,
+.auction-card-30d .xt-sale-summary > .xt-sale-cell span{
+    font-size:16px !important;
+    font-weight:700 !important;
+    line-height:1.35 !important;
+}
+
+/* Price and total ? same font size as other values */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell.price b,
+.auction-card-30d .xt-sale-summary > .xt-sale-cell.total b{
+    font-size:16px !important;
+    font-weight:700 !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? FIELD 08 CATEGORY VALUE */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell:nth-child(8) b{
+    font-size:14px !important;
+    line-height:1.35 !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? TOP 8 FIELDS PADDING */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell{
+    padding:5px !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? FIELD 01 LOT WIDTH */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell:nth-child(1){
+    flex:1.00 1 0 !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? FIELD 02 DATE WIDTH */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell:nth-child(2){
+    flex:0.60 1 0 !important;
+}
+
+/* AUCTION 30 DAYS ? FIELD 04 QUANTITY WIDTH */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell:nth-child(4){
+    flex:0.50 1 0 !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? FIELD 03 PRODUCT CODE WIDTH */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell:nth-child(3){
+    flex:1.00 1 0 !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? FIELD 06 UNIT PRICE WIDTH */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell:nth-child(6){
+    flex:0.80 1 0 !important;
+}
+
+/* AUCTION 30 DAYS ? FIELD 07 SALE VALUE WIDTH */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell:nth-child(7){
+    flex:0.90 1 0 !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? FIELD 04 QUANTITY VALUE COLOR */
+.auction-card-30d .xt-sale-summary > .xt-sale-cell:nth-child(4) b{
+    color:#07957c !important;
+}
+
+
+
+/* =========================================================
+   AUCTION 30 DAYS ? PARTY ROW EXACT WIDTHS
+   288 | 200 | 200 | 200
+   ========================================================= */
+
+.auction-card-30d .xt-party-grid{
+    grid-template-columns:288px 200px 200px 200px !important;
+}
+
+/* 01 CUSTOMER */
+.auction-card-30d .xt-party-grid > .xt-party-card:nth-child(1){
+    width:288px !important;
+}
+
+/* 02 REGION */
+.auction-card-30d .xt-party-grid > .xt-party-card:nth-child(2){
+    width:200px !important;
+}
+
+/* 03 SUPPLIER */
+.auction-card-30d .xt-party-grid > .xt-party-card:nth-child(3){
+    width:200px !important;
+}
+
+/* 04 STATUS */
+.auction-card-30d .xt-party-grid > .xt-party-card:nth-child(4){
+    width:200px !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? PARTY ROW WIDTH UPDATE */
+.auction-card-30d .xt-party-grid{
+    grid-template-columns:350px 200px 200px 200px !important;
+}
+
+.auction-card-30d .xt-party-grid > .xt-party-card:nth-child(1){
+    width:350px !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? PARTY ROW WIDTH UPDATE */
+.auction-card-30d .xt-party-grid{
+    grid-template-columns:450px 200px 200px 200px !important;
+}
+
+.auction-card-30d .xt-party-grid > .xt-party-card:nth-child(1){
+    width:450px !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? PARTY ROW REGION 300PX */
+.auction-card-30d .xt-party-grid{
+    grid-template-columns:450px 300px 200px 200px !important;
+}
+
+.auction-card-30d .xt-party-grid > .xt-party-card:nth-child(2){
+    width:300px !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? PARTY ROW SUPPLIER 280PX */
+.auction-card-30d .xt-party-grid{
+    grid-template-columns:450px 300px 280px 200px !important;
+}
+
+.auction-card-30d .xt-party-grid > .xt-party-card:nth-child(3){
+    width:280px !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? PARTY ROW SUPPLIER 300PX */
+.auction-card-30d .xt-party-grid{
+    grid-template-columns:450px 300px 300px 200px !important;
+}
+
+.auction-card-30d .xt-party-grid > .xt-party-card:nth-child(3){
+    width:300px !important;
+}
+
+
+
+/* AUCTION 30 DAYS ? CUSTOMER LONG VALUE FIX */
+.auction-card-30d .xt-party-grid > .xt-party-card:nth-child(1){
+    height:auto !important;
+    min-height:66px !important;
+    overflow:visible !important;
+}
+
+.auction-card-30d .xt-party-grid > .xt-party-card:nth-child(1) b{
+    display:block !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    overflow-wrap:break-word !important;
+    word-break:normal !important;
+    line-height:1.35 !important;
+}
+
+
+
+/* =========================================================
+   AUCTION 30 DAYS ? PARTY ROW AUTO EQUAL HEIGHT
+   Tallest card defines the height of all 4 cards.
+   ========================================================= */
+
+.auction-card-30d .xt-party-grid{
+    align-items:stretch !important;
+}
+
+/* All 4 cards follow the tallest card */
+.auction-card-30d .xt-party-grid > .xt-party-card{
+    height:auto !important;
+    min-height:66px !important;
+    align-self:stretch !important;
+    overflow:visible !important;
+    box-sizing:border-box !important;
+}
+
+/* Long values may wrap normally */
+.auction-card-30d .xt-party-grid > .xt-party-card b{
+    display:block !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    overflow-wrap:break-word !important;
+    word-break:normal !important;
+    line-height:1.35 !important;
+}
+
+
+
+/* =========================================================
+   AUCTION 30 DAYS ? PARTY ROW TYPOGRAPHY STANDARD
+   ========================================================= */
+
+/* Labels */
+.auction-card-30d .xt-party-grid > .xt-party-card small{
+    font-size:12px !important;
+    font-weight:500 !important;
+    line-height:20px !important;
+}
+
+/* Values */
+.auction-card-30d .xt-party-grid > .xt-party-card b{
+    font-size:16px !important;
+    font-weight:700 !important;
+    line-height:1.35 !important;
+}
+
+
+
+/* =========================================================
+   AUCTION 30 DAYS ? PRODUCT DESCRIPTION
+   Width: 1250px
+   Auto height + word wrapping
+   ========================================================= */
+
+.auction-card-30d .xt-sale-description{
+    width:1250px !important;
+    max-width:1250px !important;
+    height:auto !important;
+    min-height:56px !important;
+    box-sizing:border-box !important;
+    overflow:visible !important;
+}
+
+/* Description value */
+.auction-card-30d .xt-sale-description p,
+.auction-card-30d .xt-sale-description b,
+.auction-card-30d .xt-sale-description div{
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    overflow-wrap:break-word !important;
+    word-break:normal !important;
+    height:auto !important;
+    max-height:none !important;
+}
+

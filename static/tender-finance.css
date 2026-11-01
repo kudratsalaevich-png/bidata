@@ -1,0 +1,14 @@
+#app:has(.tender-hero) .tender-hero{padding:16px 22px;text-align:left;margin-bottom:14px;min-height:0}
+#app:has(.tender-hero) .tender-hero h2{font-size:24px;margin:6px 0}
+#app:has(.tender-hero) .tender-hero p{margin:5px 0;font-size:14px}
+#app:has(.tender-hero) .tender-kpi{padding:16px;min-height:0}
+#app:has(.tender-hero) .tender-kpi strong{font-size:25px;overflow-wrap:anywhere}
+#taKpiAmount{font-size:20px!important;line-height:1.5}
+.finance-summary-note{font-size:13px;line-height:1.6;margin:8px 0 16px;color:var(--muted,#66758d)}
+#app:has(.tender-hero) .tender-filter-grid select,#app:has(.tender-hero) .tender-filter-grid input{font:inherit;border:1px solid #cbd5e1;border-radius:10px;padding:10px;min-width:0;background:var(--panel,#fff);color:inherit}
+#app:has(.tender-hero) .tender-filter-grid{grid-template-columns:1fr 1.25fr 1fr 1.2fr auto;gap:10px}
+.tender-card-money strong{font-size:18px!important;overflow-wrap:anywhere}
+.finance-note{display:grid;gap:6px;padding:16px;margin-bottom:16px;line-height:1.6;overflow-wrap:anywhere}
+.finance-difference{color:#a15b08}
+@media(max-width:1000px){#app:has(.tender-hero) .tender-filter-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){#app:has(.tender-hero) .tender-filter-grid{grid-template-columns:1fr}#app:has(.tender-hero) .tender-hero h2{font-size:20px}}

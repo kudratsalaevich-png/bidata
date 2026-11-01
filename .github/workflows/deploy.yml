@@ -1,0 +1,44 @@
+name: Deploy BIData Web
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: bidata-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: ${{ vars.BIDATA_DEPLOY_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy over SSH
+        env:
+          HOST: ${{ secrets.HETZNER_HOST }}
+          USER: ${{ secrets.HETZNER_USER }}
+          SSH_KEY: ${{ secrets.HETZNER_SSH_PRIVATE_KEY }}
+          KNOWN_HOSTS: ${{ secrets.HETZNER_KNOWN_HOSTS }}
+          DEPLOY_PATH: ${{ vars.BIDATA_DEPLOY_PATH }}
+          DATA_DIR: ${{ vars.BIDATA_DATA_DIR }}
+        run: |
+          set -euo pipefail
+          test -n "$HOST" && test -n "$USER" && test -n "$SSH_KEY" && test -n "$KNOWN_HOSTS" && test -n "$DATA_DIR"
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+          DEPLOY_PATH="${DEPLOY_PATH:-/opt/bidata-web}"
+          ssh -i ~/.ssh/id_ed25519 "$USER@$HOST" \
+            "DEPLOY_PATH='$DEPLOY_PATH' DATA_DIR='$DATA_DIR' bash -se" <<'REMOTE'
+          set -euo pipefail
+          cd "$DEPLOY_PATH"
+          git fetch origin main
+          git reset --hard origin/main
+          .venv/bin/pip install -r requirements.txt
+          .venv/bin/python ticker_daily_build_v5.py --data-dir "$DATA_DIR" --output static/product-ticker-data.json
+          sudo systemctl restart bidata-web.service
+          curl --fail --silent --show-error http://127.0.0.1:8090/api/system/health >/dev/null
+          REMOTE

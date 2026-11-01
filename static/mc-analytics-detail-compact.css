@@ -1,0 +1,15 @@
+/* MC.UZ analytics detail only. */
+#app .mcd-page{align-items:start;min-width:0}
+#app .mcd-page .mcd-section{align-self:start;min-width:0}
+#app .mcd-page .mcd-section:has(>.mcd-files){grid-column:1/-1}
+#app .mcd-page .mcd-files{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#app .mcd-page .mcd-file-info{min-width:0}
+#app .mcd-page .mcd-file-info b{overflow-wrap:anywhere;white-space:normal}
+#app .mcd-page .mcd-file a{flex-shrink:0}
+@media(max-width:800px){
+ #app .mcd-page .mcd-files{grid-template-columns:1fr}
+ #app .mcd-page .mcd-hero{padding:14px}
+ #app .mcd-page .mcd-hero h1{font-size:20px!important;line-height:1.4!important;overflow-wrap:anywhere}
+ #app .mcd-page .mcd-main-price strong{font-size:22px!important;overflow-wrap:anywhere}
+ #app .mcd-page .mcd-lot{overflow-wrap:anywhere}
+}
